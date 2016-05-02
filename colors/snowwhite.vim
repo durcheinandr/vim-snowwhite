@@ -1,6 +1,6 @@
 " Filename      : snowwhite.vim
 " Created       : Fri 2016-04-29 12:20:00 (+0200)
-" Last Modified : Sun 2016-05-01 13:27:47 (+0200)
+" Last Modified : Mon 2016-05-02 19:55:40 (+0200)
 " Summary       : vim colorscheme
 " Copyright (C) : 2016 jochen <jochen@durcheinandr.de>
 " License       : MIT
@@ -58,8 +58,8 @@ hi TabLineSel      ctermfg=none    ctermbg=7       cterm=none
 
 " - File Navigation / Searching {{{2
 hi Directory       ctermfg=none    ctermbg=15      cterm=none
-hi Search          ctermfg=16      ctermbg=3       cterm=none
-hi IncSearch       ctermfg=16      ctermbg=3       cterm=none
+hi Search          ctermfg=16      ctermbg=8       cterm=none
+hi IncSearch       ctermfg=16      ctermbg=8       cterm=none
 
 " - Prompt/Status {{{2
 hi StatusLine      ctermfg=15      ctermbg=8       cterm=none
