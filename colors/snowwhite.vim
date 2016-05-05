@@ -1,6 +1,6 @@
 " Filename      : snowwhite.vim
 " Created       : Fri 2016-04-29 12:20:00 (+0200)
-" Last Modified : Mon 2016-05-02 19:55:40 (+0200)
+" Last Modified : Thu 2016-05-05 15:18:52 (+0200)
 " Summary       : vim colorscheme
 " Copyright (C) : 2016 jochen <jochen@durcheinandr.de>
 " License       : MIT
@@ -21,6 +21,13 @@ if exists("syntax_on")
 endif
 let g:colors_name="snowwhite"
 
+if !exists("g:snowwhite_strbackgrounds")
+    let g:snowwhite_strbackgrounds = 0
+endif
+if !exists("g:snowwhite_heavycomments")
+    let g:snowwhite_heavycomments = 0
+endif
+
 " Helpers Colors and Colums {{{1
 "
 " black,   brightblack,   0,  8
@@ -39,12 +46,12 @@ let g:colors_name="snowwhite"
 " Editor settings {{{1
 hi Normal          ctermfg=16      ctermbg=15      cterm=none
 hi Cursor          ctermfg=none    ctermbg=15      cterm=none
-hi CursorLine      ctermfg=none    ctermbg=7       cterm=none
+hi CursorLine      ctermfg=none    ctermbg=3       cterm=none
 hi LineNr          ctermfg=7       ctermbg=15      cterm=none
 hi CursorLineNR    ctermfg=none    ctermbg=15      cterm=none
 
 " - Number column {{{2
-hi CursorColumn    ctermfg=none    ctermbg=7       cterm=none
+hi CursorColumn    ctermfg=none    ctermbg=3       cterm=none
 hi FoldColumn      ctermfg=none    ctermbg=7       cterm=none
 hi SignColumn      ctermfg=none    ctermbg=15      cterm=none
 hi Folded          ctermfg=none    ctermbg=7       cterm=none
@@ -58,8 +65,8 @@ hi TabLineSel      ctermfg=none    ctermbg=7       cterm=none
 
 " - File Navigation / Searching {{{2
 hi Directory       ctermfg=none    ctermbg=15      cterm=none
-hi Search          ctermfg=16      ctermbg=8       cterm=none
-hi IncSearch       ctermfg=16      ctermbg=8       cterm=none
+hi Search          ctermfg=16      ctermbg=4       cterm=none
+hi IncSearch       ctermfg=16      ctermbg=4       cterm=none
 
 " - Prompt/Status {{{2
 hi StatusLine      ctermfg=15      ctermbg=8       cterm=none
@@ -86,9 +93,9 @@ hi SpecialKey      ctermfg=none    ctermbg=15      cterm=none
 
 " Variable types {{{1
 hi Constant        ctermfg=none    ctermbg=15      cterm=none
-hi String          ctermfg=8       ctermbg=15      cterm=none
+hi String          ctermfg=none    ctermbg=15      cterm=none
 hi StringDelimiter ctermfg=none    ctermbg=15      cterm=none
-hi Character       ctermfg=8       ctermbg=15      cterm=none
+hi Character       ctermfg=none    ctermbg=15      cterm=none
 hi Number          ctermfg=none    ctermbg=15      cterm=none
 hi Boolean         ctermfg=none    ctermbg=15      cterm=none
 hi Float           ctermfg=none    ctermbg=15      cterm=none
@@ -142,6 +149,15 @@ hi SpellBad        ctermfg=1       ctermbg=15      cterm=none
 hi SpellCap        ctermfg=1       ctermbg=15      cterm=none
 hi SpellLocal      ctermfg=1       ctermbg=15      cterm=none
 hi SpellRare       ctermfg=1       ctermbg=15      cterm=none
+
+" Optional Syntax
+if g:snowwhite_strbackgrounds
+  hi Character     ctermfg=8       ctermbg=15      cterm=none  
+  hi String        ctermfg=8       ctermbg=15      cterm=none  
+endif
+if g:snowwhite_heavycomments
+  hi Comment       ctermfg=8       ctermbg=15      cterm=none
+endif
 
 " modeline {{{1
 " vim:foldmethod=marker
