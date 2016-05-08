@@ -1,6 +1,6 @@
 " Filename      : snowwhite.vim
 " Created       : Fri 2016-04-29 12:20:00 (+0200)
-" Last Modified : Thu 2016-05-05 15:18:52 (+0200)
+" Last Modified : Sun 2016-05-08 19:27:40 (+0200)
 " Summary       : vim colorscheme
 " Copyright (C) : 2016 jochen <jochen@durcheinandr.de>
 " License       : MIT
@@ -19,6 +19,7 @@ highlight clear
 if exists("syntax_on")
   syntax reset
 endif
+
 let g:colors_name="snowwhite"
 
 if !exists("g:snowwhite_strbackgrounds")
@@ -28,135 +29,127 @@ if !exists("g:snowwhite_heavycomments")
     let g:snowwhite_heavycomments = 0
 endif
 
-" Helpers Colors and Colums {{{1
+" Colors {{{1
 "
-" black,   brightblack,   0,  8
-" red,     brightred,     1,  9
-" green,   brightgreen,   2,  10
-" yellow,  brightyellow,  3,  11
-" blue,    brightblue,    4,  12
-" magenta, brightmagenta, 5,  13
-" cyan,    brightcyan,    6,  14
-" white,   brightwhite,   7,  15
-"
-"-----------------------------------------------------------------
-" Syntax group    | Foreground    | Background    | Style        |
-"-----------------------------------------------------------------
+" black,   brightblack,   0,  8,  #000000,  #b0b0b0
+" red,     brightred,     1,  9,  #fb0120,  #fb0120
+" green,   brightgreen,   2,  10, #a1c659,  #a1c659
+" yellow,  brightyellow,  3,  11, #fda331,  #fda331
+" blue,    brightblue,    4,  12, #6fb3d2,  #6fb3d2
+" magenta, brightmagenta, 5,  13, #d381c3,  #d381c3
+" cyan,    brightcyan,    6,  14, #76c7b7,  #76c7b7
+" white,   brightwhite,   7,  15, #e0e0e0,  #ffffff
 
 " Editor settings {{{1
-hi Normal          ctermfg=16      ctermbg=15      cterm=none
-hi Cursor          ctermfg=none    ctermbg=15      cterm=none
-hi CursorLine      ctermfg=none    ctermbg=3       cterm=none
-hi LineNr          ctermfg=7       ctermbg=15      cterm=none
-hi CursorLineNR    ctermfg=none    ctermbg=15      cterm=none
+hi  Normal        term=NONE  ctermfg=0     ctermbg=15  cterm=NONE  guifg=#000000  guibg=#ffffff  gui=NONE
+hi  Cursor        term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE     guibg=#ffffff  gui=NONE
+hi  CursorLine    term=NONE  ctermfg=NONE  ctermbg=3   cterm=NONE  guifg=NONE     guibg=#fda331  gui=NONE
+hi  LineNr        term=NONE  ctermfg=7     ctermbg=15  cterm=NONE  guifg=#e0e0e0  guibg=#ffffff  gui=NONE
+hi  CursorLineNR  term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE     guibg=#ffffff  gui=NONE
 
 " - Number column {{{2
-hi CursorColumn    ctermfg=none    ctermbg=3       cterm=none
-hi FoldColumn      ctermfg=none    ctermbg=7       cterm=none
-hi SignColumn      ctermfg=none    ctermbg=15      cterm=none
-hi Folded          ctermfg=none    ctermbg=7       cterm=none
+hi  CursorColumn  term=NONE  ctermfg=NONE  ctermbg=3   cterm=NONE  guifg=NONE  guibg=#fda331  gui=NONE
+hi  FoldColumn    term=NONE  ctermfg=NONE  ctermbg=7   cterm=NONE  guifg=NONE  guibg=#e0e0e0  gui=NONE
+hi  SignColumn    term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Folded        term=NONE  ctermfg=NONE  ctermbg=7   cterm=NONE  guifg=NONE  guibg=#e0e0e0  gui=NONE
 
 " - Window/Tab delimiters {{{2
-hi VertSplit       ctermfg=7       ctermbg=7       cterm=none
-hi ColorColumn     ctermfg=none    ctermbg=7       cterm=none
-hi TabLine         ctermfg=none    ctermbg=15      cterm=none
-hi TabLineFill     ctermfg=none    ctermbg=7       cterm=none
-hi TabLineSel      ctermfg=none    ctermbg=7       cterm=none
+hi  VertSplit    term=NONE     ctermfg=7     ctermbg=7   cterm=NONE  guifg=#e0e0e0  guibg=#e0e0e0  gui=NONE
+hi  ColorColumn  term=NONE     ctermfg=NONE  ctermbg=7   cterm=NONE  guifg=NONE     guibg=#e0e0e0  gui=NONE
+hi  TabLine      term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE     guibg=#ffffff  gui=NONE
+hi  TabLineFill  term=NONE     ctermfg=NONE  ctermbg=7   cterm=NONE  guifg=NONE     guibg=#e0e0e0  gui=NONE
+hi  TabLineSel   term=reverse  ctermfg=NONE  ctermbg=7   cterm=NONE  guifg=NONE     guibg=#e0e0e0  gui=NONE
 
 " - File Navigation / Searching {{{2
-hi Directory       ctermfg=none    ctermbg=15      cterm=none
-hi Search          ctermfg=16      ctermbg=4       cterm=none
-hi IncSearch       ctermfg=16      ctermbg=4       cterm=none
+hi  Directory     term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
+hi  Search        term=NONE  ctermfg=0     ctermbg=4   cterm=NONE       guifg=#000000  guibg=#6fb3d2  gui=NONE
+hi  IncSearch     term=NONE  ctermfg=0     ctermbg=4   cterm=NONE       guifg=#000000  guibg=#6fb3d2  gui=NONE
 
 " - Prompt/Status {{{2
-hi StatusLine      ctermfg=15      ctermbg=8       cterm=none
-hi StatusLineNC    ctermfg=none    ctermbg=15      cterm=none
-hi WildMenu        ctermfg=none    ctermbg=15      cterm=reverse
-hi Question        ctermfg=none    ctermbg=15      cterm=none
-hi Title           ctermfg=none    ctermbg=15      cterm=none
-hi ModeMsg         ctermfg=none    ctermbg=3       cterm=none
-hi MoreMsg         ctermfg=none    ctermbg=15      cterm=none
+hi  StatusLine    term=NONE     ctermfg=15    ctermbg=8   cterm=NONE     guifg=#ffffff  guibg=#b0b0b0  gui=NONE
+hi  StatusLineNC  term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
+hi  WildMenu      term=reverse  ctermfg=NONE  ctermbg=15  cterm=reverse  guifg=NONE     guibg=#ffffff  gui=reverse
+hi  Question      term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
+hi  Title         term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
+hi  ModeMsg       term=NONE     ctermfg=NONE  ctermbg=3   cterm=NONE     guifg=NONE     guibg=#fda331  gui=NONE
+hi  MoreMsg       term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
 
 " - Visual aid {{{2
-hi MatchParen      ctermfg=none    ctermbg=4       cterm=none
-hi Visual          ctermfg=none    ctermbg=7       cterm=none
-hi VisualNOS       ctermfg=none    ctermbg=15      cterm=none
-hi NonText         ctermfg=8       ctermbg=15      cterm=none
-
-hi Todo            ctermfg=33      ctermbg=15      cterm=none
-hi Underlined      ctermfg=none    ctermbg=15      cterm=underline
-hi Error           ctermfg=none    ctermbg=15      cterm=none
-hi ErrorMsg        ctermfg=none    ctermbg=15      cterm=none
-hi WarningMsg      ctermfg=none    ctermbg=15      cterm=none
-hi Ignore          ctermfg=none    ctermbg=15      cterm=none
-hi SpecialKey      ctermfg=none    ctermbg=15      cterm=none
+hi  MatchParen  term=NONE     ctermfg=NONE  ctermbg=4   cterm=NONE       guifg=NONE     guibg=#6fb3d2  gui=NONE
+hi  Visual      term=reverse  ctermfg=NONE  ctermbg=7   cterm=NONE       guifg=NONE     guibg=#e0e0e0  gui=NONE
+hi  VisualNOS   term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
+hi  NonText     term=NONE     ctermfg=8     ctermbg=15  cterm=NONE       guifg=#b0b0b0  guibg=#ffffff  gui=NONE
+hi  Todo        term=NONE     ctermfg=4     ctermbg=15  cterm=NONE       guifg=#6fb3d2  guibg=#ffffff  gui=NONE
+hi  Underlined  term=NONE     ctermfg=NONE  ctermbg=15  cterm=underline  guifg=NONE     guibg=#ffffff  gui=underline
+hi  Error       term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
+hi  ErrorMsg    term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
+hi  WarningMsg  term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
+hi  Ignore      term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
+hi  SpecialKey  term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
 
 " Variable types {{{1
-hi Constant        ctermfg=none    ctermbg=15      cterm=none
-hi String          ctermfg=none    ctermbg=15      cterm=none
-hi StringDelimiter ctermfg=none    ctermbg=15      cterm=none
-hi Character       ctermfg=none    ctermbg=15      cterm=none
-hi Number          ctermfg=none    ctermbg=15      cterm=none
-hi Boolean         ctermfg=none    ctermbg=15      cterm=none
-hi Float           ctermfg=none    ctermbg=15      cterm=none
-
-hi Identifier      ctermfg=none    ctermbg=15      cterm=none
-hi Function        ctermfg=none    ctermbg=15      cterm=none
+hi  Constant         term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  String           term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  StringDelimiter  term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Character        term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Number           term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Boolean          term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Float            term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Identifier       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Function         term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
 
 " Language constructs {{{1
-hi Statement       ctermfg=none    ctermbg=15      cterm=none
-hi Conditional     ctermfg=none    ctermbg=15      cterm=none
-hi Repeat          ctermfg=none    ctermbg=15      cterm=none
-hi Label           ctermfg=none    ctermbg=15      cterm=none
-hi Operator        ctermfg=none    ctermbg=15      cterm=none
-hi Keyword         ctermfg=none    ctermbg=15      cterm=none
-hi Exception       ctermfg=none    ctermbg=15      cterm=none
-hi Comment         ctermfg=8       ctermbg=15      cterm=none
-
-hi Special         ctermfg=none    ctermbg=15      cterm=none
-hi SpecialChar     ctermfg=none    ctermbg=15      cterm=none
-hi Tag             ctermfg=none    ctermbg=15      cterm=none
-hi Delimiter       ctermfg=none    ctermbg=15      cterm=none
-hi SpecialComment  ctermfg=none    ctermbg=15      cterm=none
-hi Debug           ctermfg=none    ctermbg=15      cterm=none
+hi  Statement       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Conditional     term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Repeat          term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Label           term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Operator        term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Keyword         term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Exception       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Comment         term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Special         term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  SpecialChar     term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Tag             term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Delimiter       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  SpecialComment  term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Debug           term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
 
 " - C like {{{2
-hi PreProc         ctermfg=none    ctermbg=15      cterm=none
-hi Include         ctermfg=none    ctermbg=15      cterm=none
-hi Define          ctermfg=none    ctermbg=15      cterm=none
-hi Macro           ctermfg=none    ctermbg=15      cterm=none
-hi PreCondit       ctermfg=none    ctermbg=15      cterm=none
-
-hi Type            ctermfg=none    ctermbg=15      cterm=none
-hi StorageClass    ctermfg=none    ctermbg=15      cterm=none
-hi Structure       ctermfg=none    ctermbg=15      cterm=none
-hi Typedef         ctermfg=none    ctermbg=15      cterm=none
+hi  PreProc       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Include       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Define        term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Macro         term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  PreCondit     term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Type          term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  StorageClass  term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Structure     term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
+hi  Typedef       term=NONE  ctermfg=NONE  ctermbg=15  cterm=NONE  guifg=NONE  guibg=#ffffff  gui=NONE
 
 " Diff {{{1
-hi DiffAdd         ctermfg=2       ctermbg=15      cterm=none
-hi DiffChange      ctermfg=5       ctermbg=15      cterm=none
-hi DiffDelete      ctermfg=1       ctermbg=15      cterm=none
-hi DiffText        ctermfg=4       ctermbg=15      cterm=none
+hi  DiffAdd     term=NONE     ctermfg=2  ctermbg=15  cterm=NONE  guifg=#a1c659  guibg=#ffffff  gui=NONE
+hi  DiffChange  term=NONE     ctermfg=5  ctermbg=15  cterm=NONE  guifg=#d381c3  guibg=#ffffff  gui=NONE
+hi  DiffDelete  term=NONE     ctermfg=1  ctermbg=15  cterm=NONE  guifg=#fb0120  guibg=#ffffff  gui=NONE
+hi  DiffText    term=reverse  ctermfg=4  ctermbg=15  cterm=NONE  guifg=#6fb3d2  guibg=#ffffff  gui=NONE
 
 " Completion menu {{{1
-hi Pmenu           ctermfg=none    ctermbg=7       cterm=none
-hi PmenuSel        ctermfg=8       ctermbg=16      cterm=reverse
-hi PmenuSbar       ctermfg=none    ctermbg=7       cterm=none
-hi PmenuThumb      ctermfg=none    ctermbg=7       cterm=none
+hi  Pmenu       term=reverse    ctermfg=NONE  ctermbg=7  cterm=NONE     guifg=NONE     guibg=#e0e0e0  gui=NONE
+hi  PmenuSel    term=NONE       ctermfg=8     ctermbg=0  cterm=reverse  guifg=#b0b0b0  guibg=#000000  gui=reverse
+hi  PmenuSbar   term=underline  ctermfg=NONE  ctermbg=7  cterm=NONE     guifg=NONE     guibg=#e0e0e0  gui=NONE
+hi  PmenuThumb  term=reverse    ctermfg=NONE  ctermbg=7  cterm=NONE     guifg=NONE     guibg=#e0e0e0  gui=NONE
 
 " Spelling {{{1
-hi SpellBad        ctermfg=1       ctermbg=15      cterm=none
-hi SpellCap        ctermfg=1       ctermbg=15      cterm=none
-hi SpellLocal      ctermfg=1       ctermbg=15      cterm=none
-hi SpellRare       ctermfg=1       ctermbg=15      cterm=none
+hi  SpellBad    term=underline  ctermfg=1  ctermbg=15  cterm=NONE  guifg=#fb0120  guibg=#ffffff  gui=NONE
+hi  SpellCap    term=underline  ctermfg=1  ctermbg=15  cterm=NONE  guifg=#fb0120  guibg=#ffffff  gui=NONE
+hi  SpellLocal  term=underline  ctermfg=1  ctermbg=15  cterm=NONE  guifg=#fb0120  guibg=#ffffff  gui=NONE
+hi  SpellRare   term=underline  ctermfg=1  ctermbg=15  cterm=NONE  guifg=#fb0120  guibg=#ffffff  gui=NONE
 
-" Optional Syntax
+" Optional Syntax {{{1
 if g:snowwhite_strbackgrounds
-  hi Character     ctermfg=8       ctermbg=15      cterm=none  
-  hi String        ctermfg=8       ctermbg=15      cterm=none  
+  hi  Character  term=NONE  ctermfg=8  ctermbg=15  cterm=NONE  guifg=#b0b0b0  guibg=#ffffff  gui=NONE
+  hi  String     term=NONE  ctermfg=8  ctermbg=15  cterm=NONE  guifg=#b0b0b0  guibg=#ffffff  gui=NONE
 endif
 if g:snowwhite_heavycomments
-  hi Comment       ctermfg=8       ctermbg=15      cterm=none
+  hi  Comment    term=NONE  ctermfg=8  ctermbg=15  cterm=NONE  guifg=#b0b0b0  guibg=#ffffff  gui=NONE
 endif
 
 " modeline {{{1
