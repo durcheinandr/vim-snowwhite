@@ -1,6 +1,6 @@
 " Filename      : snowwhite.vim
 " Created       : Fri 2016-04-29 12:20:00 (+0200)
-" Last Modified : Sun 2016-05-08 19:27:40 (+0200)
+" Last Modified : Mon 2016-05-09 19:37:33 (+0200)
 " Summary       : vim colorscheme
 " Copyright (C) : 2016 jochen <jochen@durcheinandr.de>
 " License       : MIT
@@ -66,11 +66,11 @@ hi  Search        term=NONE  ctermfg=0     ctermbg=4   cterm=NONE       guifg=#0
 hi  IncSearch     term=NONE  ctermfg=0     ctermbg=4   cterm=NONE       guifg=#000000  guibg=#6fb3d2  gui=NONE
 
 " - Prompt/Status {{{2
-hi  StatusLine    term=NONE     ctermfg=15    ctermbg=8   cterm=NONE     guifg=#ffffff  guibg=#b0b0b0  gui=NONE
-hi  StatusLineNC  term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
+hi  StatusLine    term=NONE     ctermfg=0     ctermbg=3   cterm=NONE     guifg=#000000  guibg=#fda331  gui=NONE
+hi  StatusLineNC  term=NONE     ctermfg=15    ctermbg=8   cterm=NONE     guifg=#ffffff  guibg=#b0b0b0  gui=NONE
 hi  WildMenu      term=reverse  ctermfg=NONE  ctermbg=15  cterm=reverse  guifg=NONE     guibg=#ffffff  gui=reverse
 hi  Question      term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
-hi  Title         term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
+hi  Title         term=NONE     ctermfg=NONE  ctermbg=15  cterm=bold     guifg=NONE     guibg=#ffffff  gui=NONE
 hi  ModeMsg       term=NONE     ctermfg=NONE  ctermbg=3   cterm=NONE     guifg=NONE     guibg=#fda331  gui=NONE
 hi  MoreMsg       term=NONE     ctermfg=NONE  ctermbg=15  cterm=NONE     guifg=NONE     guibg=#ffffff  gui=NONE
 
