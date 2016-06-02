@@ -1,6 +1,6 @@
 " Filename      : snowwhite.vim
 " Created       : Fri 2016-04-29 12:20:00 (+0200)
-" Last Modified : Thu 2016-06-02 13:33:19 (+0200)
+" Last Modified : Thu 2016-06-02 22:51:00 (+0200)
 " Summary       : vim colorscheme
 " Copyright (C) : 2016 jochen <jochen@durcheinandr.de>
 " License       : MIT
@@ -9,9 +9,6 @@
 "
 " inspired by:
 " https://github.com/robertmeta/nofrils
-"
-" based on template from:
-" https://github.com/ggalindezb/Vim-Colorscheme-Template
 
 set background=light
 
