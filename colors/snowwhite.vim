@@ -1,6 +1,6 @@
 " Filename      : snowwhite.vim
 " Created       : Fri 2016-04-29 12:20:00 (+0200)
-" Last Modified : Thu 2016-06-02 22:51:00 (+0200)
+" Last Modified : Sun 2016-06-05 07:05:22 (+0200)
 " Summary       : vim colorscheme
 " Copyright (C) : 2016 jochen <jochen@durcheinandr.de>
 " License       : MIT
@@ -63,7 +63,7 @@ hi  Search           term=NONE       ctermfg=16    ctermbg=75   cterm=NONE      
 hi  IncSearch        term=NONE       ctermfg=16    ctermbg=75   cterm=NONE       guifg=#000000  guibg=#6fb3d2  gui=NONE
 
 " - Prompt/Status {{{2
-hi  StatusLine       term=NONE       ctermfg=16    ctermbg=208  cterm=NONE       guifg=#000000  guibg=#fda331  gui=NONE
+hi  StatusLine       term=NONE       ctermfg=16    ctermbg=244  cterm=NONE       guifg=#000000  guibg=#fda331  gui=NONE
 hi  StatusLineNC     term=NONE       ctermfg=15    ctermbg=250  cterm=NONE       guifg=#ffffff  guibg=#b0b0b0  gui=NONE
 hi  WildMenu         term=reverse    ctermfg=NONE  ctermbg=231  cterm=reverse    guifg=NONE     guibg=#ffffff  gui=reverse
 hi  Question         term=NONE       ctermfg=NONE  ctermbg=231  cterm=NONE       guifg=NONE     guibg=#ffffff  gui=NONE
@@ -134,11 +134,16 @@ hi  PmenuSel         term=NONE       ctermfg=250   ctermbg=16   cterm=reverse   
 hi  PmenuSbar        term=underline  ctermfg=NONE  ctermbg=253  cterm=NONE       guifg=NONE     guibg=#e0e0e0  gui=NONE
 hi  PmenuThumb       term=reverse    ctermfg=NONE  ctermbg=253  cterm=NONE       guifg=NONE     guibg=#e0e0e0  gui=NONE
 
+
 " Spelling {{{1
 hi  SpellBad         term=underline  ctermfg=196   ctermbg=231  cterm=NONE       guifg=#fb0120  guibg=#ffffff  gui=NONE
 hi  SpellCap         term=underline  ctermfg=196   ctermbg=231  cterm=NONE       guifg=#fb0120  guibg=#ffffff  gui=NONE
 hi  SpellLocal       term=underline  ctermfg=196   ctermbg=231  cterm=NONE       guifg=#fb0120  guibg=#ffffff  gui=NONE
 hi  SpellRare        term=underline  ctermfg=196   ctermbg=231  cterm=NONE       guifg=#fb0120  guibg=#ffffff  gui=NONE
+
+" gvim cursor {{{1
+hi  Cursor                                                                       guifg=white    guibg=#fda331
+hi  iCursor                                                                      guifg=white    guibg=#6fb3d2
 
 " Optional Syntax {{{1
 if g:snowwhite_strbackgrounds
